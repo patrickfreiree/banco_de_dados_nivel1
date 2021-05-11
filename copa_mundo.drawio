@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-11T20:24:16.768Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="lZXU4fMOr77sH6DlgF0U" version="14.6.12" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-11T21:15:33.805Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="tYN6RnKMjT5dFttHstBx" version="14.6.12" type="github">
   <diagram id="DI82Bb3bqDMcabK5-wRD" name="Page-1">
     <mxGraphModel dx="842" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -19,7 +19,7 @@
         <mxCell id="eNTcGy9PJzzU8kZrzDq5-11" value="partidas" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=1;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;align=center;sketch=0;labelBackgroundColor=none;labelBorderColor=none;strokeColor=#6c8ebf;gradientColor=#ffffff;fillColor=#3399FF;" parent="1" vertex="1">
           <mxGeometry x="40" y="480" width="270" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="eNTcGy9PJzzU8kZrzDq5-12" value="data_partida(decimal);&#xa;num_jogadores_total(decimal);&#xa;nome_selecao01(caracter);&#xa;nomeselecao02(caracter);" style="align=left;spacingLeft=4;fontSize=16;verticalAlign=middle;resizable=0;rotatable=0;part=1;" parent="eNTcGy9PJzzU8kZrzDq5-11" vertex="1">
+        <mxCell id="eNTcGy9PJzzU8kZrzDq5-12" value="data_partida(decimal);&#xa;num_jogadores_total(decimal);&#xa;nome_selecao01(caracter);&#xa;nome_selecao02(caracter);&#xa;horas_jogados(decimal);&#xa;quant_cart_vermelho(decimal);&#xa;quant_cart_amarelo(decimal);&#xa;" style="align=left;spacingLeft=4;fontSize=16;verticalAlign=middle;resizable=0;rotatable=0;part=1;" parent="eNTcGy9PJzzU8kZrzDq5-11" vertex="1">
           <mxGeometry y="30" width="270" height="170" as="geometry" />
         </mxCell>
         <mxCell id="eNTcGy9PJzzU8kZrzDq5-13" value="arbitragem" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=1;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;align=center;sketch=0;labelBackgroundColor=none;labelBorderColor=none;strokeColor=#6c8ebf;gradientColor=#ffffff;fillColor=#3399FF;" parent="1" vertex="1">
@@ -41,10 +41,10 @@
           <mxGeometry y="30" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="eNTcGy9PJzzU8kZrzDq5-22" value="rank_copa" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=1;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;align=center;sketch=0;labelBackgroundColor=none;labelBorderColor=none;strokeColor=#6c8ebf;gradientColor=#ffffff;fillColor=#3399FF;" parent="1" vertex="1">
-          <mxGeometry x="25" y="820" width="300" height="130" as="geometry" />
+          <mxGeometry x="17.5" y="820" width="315" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="eNTcGy9PJzzU8kZrzDq5-23" value="pontuacao_selecao_total(decimal);&#xa;quant_total_jogadores_expulso(decimal);&#xa;" style="align=left;spacingLeft=4;fontSize=16;verticalAlign=middle;resizable=0;rotatable=0;part=1;" parent="eNTcGy9PJzzU8kZrzDq5-22" vertex="1">
-          <mxGeometry y="30" width="300" height="100" as="geometry" />
+        <mxCell id="eNTcGy9PJzzU8kZrzDq5-23" value="pontuacao_selecao_total_time01(decimal);&#xa;pontuacao_selecao_total_time02(decimal);&#xa;total_expulsoes(decimal);&#xa;total_cartao_vermelho(decimal);&#xa;total_cartao_amarelo(decimal);&#xa;quant_total_jogadores_expulsos(decimal);&#xa;&#xa;" style="align=left;spacingLeft=4;fontSize=16;verticalAlign=middle;resizable=0;rotatable=0;part=1;" parent="eNTcGy9PJzzU8kZrzDq5-22" vertex="1">
+          <mxGeometry y="30" width="315" height="150" as="geometry" />
         </mxCell>
         <mxCell id="eNTcGy9PJzzU8kZrzDq5-31" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;rounded=0;strokeColor=#23445D;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="eNTcGy9PJzzU8kZrzDq5-12" target="eNTcGy9PJzzU8kZrzDq5-16" edge="1">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
