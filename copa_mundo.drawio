@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-11T19:50:32.779Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="1NcmF-zZZaoJuZfR8nlF" version="14.6.12" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-11T20:24:16.768Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="lZXU4fMOr77sH6DlgF0U" version="14.6.12" type="github">
   <diagram id="DI82Bb3bqDMcabK5-wRD" name="Page-1">
     <mxGraphModel dx="842" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -19,7 +19,7 @@
         <mxCell id="eNTcGy9PJzzU8kZrzDq5-11" value="partidas" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=1;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;align=center;sketch=0;labelBackgroundColor=none;labelBorderColor=none;strokeColor=#6c8ebf;gradientColor=#ffffff;fillColor=#3399FF;" parent="1" vertex="1">
           <mxGeometry x="40" y="480" width="270" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="eNTcGy9PJzzU8kZrzDq5-12" value="nome_jogador(caracter);&#xa;sobre_nome_jogador(caracter);&#xa;idade(decimal);&#xa;numero_camiseta(decimal);&#xa;exame_medico(caracter);&#xa;quant_cartao_vermelho(decimal);&#xa;quant_cartao_amarelo(decimal);&#xa;quant_expulsao(decimal);" style="align=left;spacingLeft=4;fontSize=16;verticalAlign=middle;resizable=0;rotatable=0;part=1;" parent="eNTcGy9PJzzU8kZrzDq5-11" vertex="1">
+        <mxCell id="eNTcGy9PJzzU8kZrzDq5-12" value="data_partida(decimal);&#xa;num_jogadores_total(decimal);&#xa;nome_selecao01(caracter);&#xa;nomeselecao02(caracter);" style="align=left;spacingLeft=4;fontSize=16;verticalAlign=middle;resizable=0;rotatable=0;part=1;" parent="eNTcGy9PJzzU8kZrzDq5-11" vertex="1">
           <mxGeometry y="30" width="270" height="170" as="geometry" />
         </mxCell>
         <mxCell id="eNTcGy9PJzzU8kZrzDq5-13" value="arbitragem" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=1;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;align=center;sketch=0;labelBackgroundColor=none;labelBorderColor=none;strokeColor=#6c8ebf;gradientColor=#ffffff;fillColor=#3399FF;" parent="1" vertex="1">
