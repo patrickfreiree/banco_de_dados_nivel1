@@ -1,4 +1,4 @@
-# aula_Edmilson_BANDOdeDADOS
+# banco_de_dados
 
 ATIVIDADE DAS AULAS ATRAVÉS DO PROGRAMA ONLINE DIAGRAM:
 
