@@ -1,7 +1,7 @@
 # banco_de_dados
 
 ATIVIDADE DAS AULAS:
-Elaboração modelo conceitual
+- Elaboração modelo conceitual
 - Elaboração modelo lógico
 - - Elaboração Modelo Físico
 - --Elaboração do Scripit para o banco de dados
