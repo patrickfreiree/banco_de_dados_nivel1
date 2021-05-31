@@ -1,0 +1,32 @@
+USE copa;
+
+-- Inserindo dados na tabela grupos - Inicio
+INSERT INTO grupos
+	(nome)
+VALUES 
+	('grupo A');
+
+INSERT INTO grupos
+	(nome)
+VALUES 
+	('grupo B'),
+    ('grupo C');
+-- fim 
+
+-- Inserindo dados na tabela cartao_tipo
+SELECT * FROM cartao_tipos;
+INSERT INTO cartao_tipos
+	(cor)
+VALUES 
+	('Vermelho'),
+    ('Amarelo');
+    
+-- fim
+-- Inserindo dados na tabela escala
+SELECT * FROM escalacao_situacoes;
+INSERT INTO escalacao_situacoes
+	(nome)
+VALUES
+	('Deferido'),
+    ('Indeferido');
+-- fim
