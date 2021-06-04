@@ -1,32 +1,70 @@
-USE copa;
+USE rec_sa1desi_loja; 
 
--- Inserindo dados na tabela grupos - Inicio
-INSERT INTO grupos
-	(nome)
-VALUES 
-	('grupo A');
-
-INSERT INTO grupos
-	(nome)
-VALUES 
-	('grupo B'),
-    ('grupo C');
+-- add clientes
+SELECT * FROM clientes;
+INSERT INTO clientes
+(cliente_id, primeiro_nome, sobrenome, data_aniversario, telefone, endereco, cidade, estado, pontos)
+VALUES
+(DEFAULT,'Mariana','Amaral', NOW() , NULL , 'Getulio Vargas', 'São Paulo', 'MG', '0'),
+(DEFAULT,'Roberto','Martins', NOW() , NULL , 'Rua tenente silveira', 'Dique de caxias', 'SC', '0'),
+(DEFAULT,'Josemar','Freire', NOW() , NULL , 'Rua do jé ninguem', 'São Pedro', 'SP', '3'),
+(DEFAULT,'Patrick','Machado', NOW() , NULL , 'Av da sorte', 'Florianopolis', 'SC', '5'),
+(DEFAULT,'Marcos','Juliano', NOW() , NULL , 'Rua São João', 'São Paulo', 'SP', '4');
 -- fim 
 
--- Inserindo dados na tabela cartao_tipo
-SELECT * FROM cartao_tipos;
-INSERT INTO cartao_tipos
-	(cor)
-VALUES 
-	('Vermelho'),
-    ('Amarelo');
-    
--- fim
--- Inserindo dados na tabela escala
-SELECT * FROM escalacao_situacoes;
-INSERT INTO escalacao_situacoes
-	(nome)
+-- add dados transportadoras
+SELECT * FROM transportadoras;
+INSERT INTO transportadoras
+(transportadora_id , nome )
 VALUES
-	('Deferido'),
-    ('Indeferido');
+('01', 'Marria das ruas'),
+('02', 'Transporty'),
+('03', 'Amaral');
+-- fim
+
+-- add dados pedido_situacao
+SELECT * FROM pedido_situacoes;
+INSERT INTO pedido_situacoes
+(pedido_situacao_id, nome)
+VALUES
+('01','Transportando'),
+('02','Processado');
+-- fim
+
+-- add dados produtos 
+SELECT * FROM produtos;
+INSERT INTO produtos
+(nome, quantidade_estoque, preco_unitario)
+VALUES 
+('Mesa de Jantar', '5' , '20.20'),
+('Cadeira', '7' , '22.60'),
+('Sofá', '2' , '18.50'),
+('Celular', '4' , '44.58'),
+('TV', '10' , '49.30');
+-- fim 
+
+-- add dados pedidos item observação 
+SELECT * FROM pedido_item_observacoes;
+INSERT INTO pedido_item_observacoes
+(observacao_id, pedido_id, produto_id, observacao)
+VALUES 
+('03','03','03','Realizado e em envio');
+-- fim
+
+-- add dados pedidos
+SELECT * FROM pedidos;
+INSERT INTO pedidos
+(pedido_id, cliente_id, pedido_data, situacao, comentarios, data_transporte, transportadora_id)
+VALUES
+('01','11', NOW(), '2', NULL, NOW(), '1');
+-- fim
+
+
+
+
+-- apagar tudo da planilha
+TRUNCATE TABLE clientes; 
+-- fim. 
+-- modificar algo da planilha
+UPDATE `produtos` SET `nome` = "Diego Macêdo", `funcao` = "Desenvolvedor Web" WHERE `id_funcionario` = 10;
 -- fim
