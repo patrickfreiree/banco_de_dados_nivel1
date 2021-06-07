@@ -3,7 +3,7 @@ USE rec_sa1desi_loja;
 SELECT 
 	p.pedido_id AS 'Nº do Pedido',
     DATE_FORMAT(p.pedido_data, '%d/%m/%Y') AS 'Data do Pedido',
-	CONCAT(c.primeiro_nome, ' ', c.sobrenome) AS 'Nome do Cliente',   
+	CONCAT(c.primeiro_nome, ' ', c.sobrenome) AS 'Nome do Cliente',
     s.nome AS 'Situacao do pedido',
     preco_unitario AS 'Preço Produto',
     quantidade_estoque,
@@ -17,3 +17,4 @@ JOIN produtos
 	ON preco_unitario
 JOIN pedido_situacoes s
 	ON p.situacao = s.pedido_situacao_id;
+
