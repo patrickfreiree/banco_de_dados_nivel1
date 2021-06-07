@@ -1,3 +1,4 @@
+
 USE rec_sa1desi_loja; 
 
 -- add clientes
@@ -60,10 +61,38 @@ VALUES
 -- fim
 
 
+USE rec_sa1desi_loja;
+SELECT 
+	p.pedido_id AS 'Nº do Pedido',
+    DATE_FORMAT(p.pedido_data, '%d/%m/%Y') AS 'Data do Pedido',
+	CONCAT(c.primeiro_nome, ' ', c.sobrenome) AS 'Nome do Cliente',   
+    s.nome AS 'Situacao do pedido'
+    
+FROM pedidos p
+JOIN clientes c
+	ON p.cliente_id = c.cliente_id
+JOIN pedido_situacoes s
+	ON p.situacao = s.pedido_situacao_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- Anotações
 -- apagar tudo da planilha
 TRUNCATE TABLE clientes; 
 -- fim. 
+
 -- modificar algo da planilha
 UPDATE `produtos` SET `nome` = "Diego Macêdo", `funcao` = "Desenvolvedor Web" WHERE `id_funcionario` = 10;
 -- fim
