@@ -1,0 +1,157 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema desi_loja
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema desi_loja
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `desi_loja` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `desi_loja` ;
+
+-- -----------------------------------------------------
+-- Table `desi_loja`.`clientes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `desi_loja`.`clientes` (
+  `cliente_id` INT NOT NULL AUTO_INCREMENT,
+  `primeiro_nome` VARCHAR(50) NOT NULL,
+  `sobrenome` VARCHAR(50) NOT NULL,
+  `data_aniversario` DATE NULL DEFAULT NULL,
+  `telefone` VARCHAR(50) NULL DEFAULT NULL,
+  `endereco` VARCHAR(50) NOT NULL,
+  `cidade` VARCHAR(50) NOT NULL,
+  `estado` CHAR(2) NOT NULL,
+  `pontos` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`cliente_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 11
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `desi_loja`.`pedido_item_observacoes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `desi_loja`.`pedido_item_observacoes` (
+  `observacao_id` INT NOT NULL,
+  `pedido_id` INT NOT NULL,
+  `produto_id` INT NOT NULL,
+  `observacao` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`observacao_id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `desi_loja`.`pedido_situacoes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `desi_loja`.`pedido_situacoes` (
+  `pedido_situacao_id` TINYINT NOT NULL,
+  `nome` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`pedido_situacao_id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `desi_loja`.`transportadoras`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `desi_loja`.`transportadoras` (
+  `transportadora_id` SMALLINT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`transportadora_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 6
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `desi_loja`.`pedidos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `desi_loja`.`pedidos` (
+  `pedido_id` INT NOT NULL AUTO_INCREMENT,
+  `cliente_id` INT NOT NULL,
+  `pedido_data` DATE NOT NULL,
+  `situacao` TINYINT NOT NULL DEFAULT '1',
+  `comentarios` VARCHAR(2000) NULL DEFAULT NULL,
+  `data_transporte` DATE NULL DEFAULT NULL,
+  `transportadora_id` SMALLINT NULL DEFAULT NULL,
+  PRIMARY KEY (`pedido_id`),
+  INDEX `fk_pedidos_clientes_idx` (`cliente_id` ASC) VISIBLE,
+  INDEX `fk_pedidos_transportadoras_idx` (`transportadora_id` ASC) VISIBLE,
+  INDEX `fk_pedidos_pedido_situacoes_idx` (`situacao` ASC) VISIBLE,
+  CONSTRAINT `fk_pedidos_clientes`
+    FOREIGN KEY (`cliente_id`)
+    REFERENCES `desi_loja`.`clientes` (`cliente_id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pedidos_pedido_situacoes`
+    FOREIGN KEY (`situacao`)
+    REFERENCES `desi_loja`.`pedido_situacoes` (`pedido_situacao_id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pedidos_transportadoras`
+    FOREIGN KEY (`transportadora_id`)
+    REFERENCES `desi_loja`.`transportadoras` (`transportadora_id`)
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 11
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `desi_loja`.`produtos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `desi_loja`.`produtos` (
+  `produto_id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  `quantidade_estoque` INT NOT NULL,
+  `preco_unitario` DECIMAL(4,2) NOT NULL,
+  PRIMARY KEY (`produto_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 11
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `desi_loja`.`pedido_itens`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `desi_loja`.`pedido_itens` (
+  `pedido_id` INT NOT NULL AUTO_INCREMENT,
+  `produto_id` INT NOT NULL,
+  `quantidade` INT NOT NULL,
+  `preco_unitario` DECIMAL(4,2) NOT NULL,
+  `pedido_item_observacoes_observacao_id` INT NOT NULL,
+  PRIMARY KEY (`pedido_id`, `produto_id`),
+  INDEX `fk_pedido_itens_produtos_idx` (`produto_id` ASC) VISIBLE,
+  INDEX `fk_pedido_itens_pedido_item_observacoes1_idx` (`pedido_item_observacoes_observacao_id` ASC) VISIBLE,
+  CONSTRAINT `fk_pedido_itens_pedidos`
+    FOREIGN KEY (`pedido_id`)
+    REFERENCES `desi_loja`.`pedidos` (`pedido_id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pedido_itens_produtos`
+    FOREIGN KEY (`produto_id`)
+    REFERENCES `desi_loja`.`produtos` (`produto_id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pedido_itens_pedido_item_observacoes1`
+    FOREIGN KEY (`pedido_item_observacoes_observacao_id`)
+    REFERENCES `desi_loja`.`pedido_item_observacoes` (`observacao_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 11
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
