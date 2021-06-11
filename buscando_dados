@@ -18,5 +18,3 @@ JOIN produtos
 JOIN pedido_situacoes s
 	ON p.situacao = s.pedido_situacao_id;
 	
-	lo
-
