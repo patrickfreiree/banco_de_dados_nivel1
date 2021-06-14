@@ -61,7 +61,6 @@ VALUES
 -- fim
 
 
-
 -- Anotações
 -- apagar tudo da planilha
 TRUNCATE TABLE clientes; 
