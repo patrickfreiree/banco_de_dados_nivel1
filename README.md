@@ -1,6 +1,6 @@
 # banco_de_dados
 
-ATIVIDADE DAS AULAS:
+~ ATIVIDADE DAS AULAS:
 - Elaboração modelo conceitual
 - Elaboração modelo lógico
 - - Elaboração Modelo Físico
