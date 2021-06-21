@@ -11,6 +11,7 @@ VALUES
 (DEFAULT,'Josemar','Freire', NOW() , NULL , 'Rua do jé ninguem', 'São Pedro', 'SP', '3'),
 (DEFAULT,'Patrick','Machado', NOW() , NULL , 'Av da sorte', 'Florianopolis', 'SC', '5'),
 (DEFAULT,'Marcos','Juliano', NOW() , NULL , 'Rua São João', 'São Paulo', 'SP', '4');
+
 -- fim 
 
 -- add dados transportadoras
