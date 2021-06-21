@@ -61,7 +61,6 @@ VALUES
 ('01','11', NOW(), '2', NULL, NOW(), '1');
 -- fim
 
-
 -- Anotações
 -- apagar tudo da planilha
 TRUNCATE TABLE clientes; 
